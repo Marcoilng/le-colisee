@@ -1,0 +1,3380 @@
+<!doctype html>
+<html class="no-js" lang="fr">
+
+<head>
+    <meta charset="utf-8">
+
+    <!--====== Title ======-->
+    <title>Le Colisée - Salle Polyvalente à Lubumbashi</title>
+
+    <meta name="description" content="Le Colisée - Salle polyvalente d'excellence à Lubumbashi. Mariages, conférences, galas et événements privés. L'Art de Recevoir.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+
+    <!--====== Animate CSS ======-->
+    <link rel="stylesheet" href="assets/css/animate.css">
+
+    <!--====== Line Icons CSS ======-->
+    <link rel="stylesheet" href="assets/css/LineIcons.css">
+
+    <!--====== Bootstrap CSS ======-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <!--====== Default CSS ======-->
+    <link rel="stylesheet" href="assets/css/default.css">
+
+    <!--====== Style CSS ======-->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================
+           CSS VARIABLES & RESET
+           ========================================= */
+        :root {
+            --primary-color: #002147;
+            --primary-dark: #001529;
+            --accent-color: #D4AF37;
+            --accent-light: #E8C547;
+            --light-bg: #F8F9FA;
+            --white: #ffffff;
+            --text-dark: #1a1a1a;
+            --text-light: #666666;
+            --text-muted: #999999;
+            --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            --gradient-accent: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-light) 100%);
+            --shadow-sm: 0 2px 10px rgba(0,0,0,0.05);
+            --shadow-md: 0 10px 30px rgba(0,0,0,0.1);
+            --shadow-lg: 0 20px 50px rgba(0,0,0,0.15);
+            --shadow-accent: 0 10px 40px rgba(212,175,55,0.3);
+            --transition-fast: all 0.2s ease;
+            --transition-normal: all 0.3s ease;
+            --transition-slow: all 0.5s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.8;
+            overflow-x: hidden;
+            background-color: var(--white);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        p {
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+            transition: var(--transition-normal);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* =========================================
+           UTILITY CLASSES
+           ========================================= */
+        .accent-color { color: var(--accent-color); }
+        .bg-primary { background-color: var(--primary-color) !important; }
+        .bg-light { background-color: var(--light-bg) !important; }
+        
+        .section-padding { padding: 100px 0; }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title .subtitle {
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .section-title .accent-line {
+            width: 80px;
+            height: 3px;
+            background: var(--gradient-accent);
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .section-title .accent-line::before,
+        .section-title .accent-line::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .section-title .accent-line::before { left: -15px; }
+        .section-title .accent-line::after { right: -15px; }
+
+        /* Buttons */
+        .btn-gold {
+            background: var(--gradient-accent);
+            color: var(--white);
+            padding: 16px 40px;
+            border: none;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            cursor: pointer;
+        }
+
+        .btn-gold::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-color);
+            transition: var(--transition-slow);
+            z-index: -1;
+        }
+
+        .btn-gold:hover::before {
+            left: 0;
+        }
+
+        .btn-gold:hover {
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-accent);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            padding: 14px 38px;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: var(--transition-normal);
+            background: transparent;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn-outline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--accent-color);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: var(--transition-normal);
+            z-index: -1;
+        }
+
+        .btn-outline:hover {
+            color: var(--white);
+        }
+
+        .btn-outline:hover::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        /* =========================================
+           PRELOADER
+           ========================================= */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--white);
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .preloader-inner {
+            position: relative;
+            width: 80px;
+            height: 80px;
+        }
+
+        .preloader-ring {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 3px solid transparent;
+            border-top-color: var(--accent-color);
+            border-radius: 50%;
+            animation: spin 1.2s linear infinite;
+        }
+
+        .preloader-ring:nth-child(2) {
+            width: 60px;
+            height: 60px;
+            top: 10px;
+            left: 10px;
+            border-top-color: var(--primary-color);
+            animation-direction: reverse;
+            animation-duration: 1s;
+        }
+
+        .preloader-logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Playfair Display', serif;
+            font-size: 14px;
+            color: var(--primary-color);
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* =========================================
+           NAVBAR
+           ========================================= */
+        .navbar {
+            background: transparent;
+            padding: 25px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition-normal);
+        }
+
+        .navbar.scrolled {
+            background: var(--primary-color);
+            padding: 15px 0;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.2);
+            animation: slideDown 0.5s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--white) !important;
+            letter-spacing: 3px;
+            position: relative;
+        }
+
+        .navbar-brand::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--accent-color);
+            transform: scaleX(0);
+            transition: var(--transition-normal);
+        }
+
+        .navbar-brand:hover::after {
+            transform: scaleX(1);
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--white);
+            font-weight: 500;
+            font-size: 14px;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            transition: var(--transition-normal);
+        }
+
+        .navbar-nav .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: var(--transition-normal);
+            transform: translateX(-50%);
+        }
+
+        .navbar-nav .nav-link:hover::before,
+        .navbar-nav .nav-link.active::before {
+            width: 80%;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--accent-color);
+        }
+
+        .navbar-toggler {
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .navbar-toggler .toggler-icon {
+            width: 30px;
+            height: 2px;
+            background: var(--white);
+            display: block;
+            margin: 5px 0;
+            position: relative;
+            transition: var(--transition-normal);
+        }
+
+        .navbar-toggler.active .toggler-icon:nth-child(1) {
+            transform: rotate(45deg);
+            top: 7px;
+        }
+
+        .navbar-toggler.active .toggler-icon:nth-child(2) {
+            opacity: 0;
+        }
+
+        .navbar-toggler.active .toggler-icon:nth-child(3) {
+            transform: rotate(-45deg);
+            top: -7px;
+        }
+
+        /* =========================================
+           HERO SECTION
+           ========================================= */
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-primary);
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('assets/images/slider-1.jpg') center/cover no-repeat;
+            opacity: 0.15;
+            transform: scale(1.1);
+            animation: heroZoom 20s ease-in-out infinite alternate;
+        }
+
+        @keyframes heroZoom {
+            0% { transform: scale(1.1); }
+            100% { transform: scale(1.2); }
+        }
+
+        .hero-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .hero-shape {
+            position: absolute;
+            border: 1px solid rgba(212,175,55,0.2);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .hero-shape-1 {
+            width: 400px;
+            height: 400px;
+            top: -100px;
+            right: -100px;
+            animation-delay: 0s;
+        }
+
+        .hero-shape-2 {
+            width: 300px;
+            height: 300px;
+            bottom: -50px;
+            left: -50px;
+            animation-delay: 2s;
+        }
+
+        .hero-shape-3 {
+            width: 200px;
+            height: 200px;
+            top: 50%;
+            left: 10%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(10deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+            max-width: 900px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 10px 30px;
+            border: 1px solid rgba(212,175,55,0.5);
+            background: rgba(212,175,55,0.1);
+            color: var(--accent-color);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero-content h1 {
+            font-size: 80px;
+            color: var(--white);
+            margin-bottom: 25px;
+            animation: fadeInUp 1s ease 0.2s both;
+            line-height: 1.1;
+        }
+
+        .hero-content h1 span {
+            display: block;
+            color: var(--accent-color);
+            font-size: 24px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            letter-spacing: 8px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .hero-content .tagline {
+            font-size: 22px;
+            font-weight: 300;
+            margin-bottom: 25px;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .hero-content .description {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 45px;
+            opacity: 0.85;
+            line-height: 1.8;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .hero-buttons {
+            animation: fadeInUp 1s ease 0.8s both;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s ease infinite;
+        }
+
+        .hero-scroll a {
+            color: var(--white);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.7;
+        }
+
+        .hero-scroll .scroll-icon {
+            width: 30px;
+            height: 50px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 20px;
+            position: relative;
+            margin: 10px auto;
+        }
+
+        .hero-scroll .scroll-icon::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 8px;
+            background: var(--accent-color);
+            border-radius: 2px;
+            animation: scrollDown 2s ease infinite;
+        }
+
+        @keyframes scrollDown {
+            0%, 100% { opacity: 1; top: 8px; }
+            50% { opacity: 0.3; top: 25px; }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* =========================================
+           STATS SECTION
+           ========================================= */
+        .stats-section {
+            background: var(--gradient-primary);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('assets/images/section_shape.png') center/cover no-repeat;
+            opacity: 0.05;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .stat-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            position: relative;
+        }
+
+        .stat-icon::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border: 1px solid var(--accent-color);
+            border-radius: 50%;
+            animation: pulse 2s ease infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.5; }
+        }
+
+        .stat-icon i {
+            font-size: 32px;
+            color: var(--accent-color);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: rgba(255,255,255,0.8);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* =========================================
+           ABOUT SECTION
+           ========================================= */
+        .about-section {
+            background-color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: var(--light-bg);
+            clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        .about-image-wrapper {
+            position: relative;
+            height: 550px;
+        }
+
+        .about-image-main {
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image-main::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            border: 2px solid var(--accent-color);
+            opacity: 0.3;
+        }
+
+        .about-image-main .placeholder-text {
+            color: var(--accent-color);
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            letter-spacing: 5px;
+        }
+
+        .about-image-float {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 200px;
+            height: 200px;
+            background: var(--gradient-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-lg);
+            animation: floatReverse 5s ease-in-out infinite;
+        }
+
+        @keyframes floatReverse {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .about-image-float span {
+            color: var(--white);
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 700;
+        }
+
+        .about-content {
+            padding-left: 50px;
+        }
+
+        .about-content .section-title {
+            text-align: left;
+        }
+
+        .about-content .section-title .accent-line {
+            margin: 0;
+        }
+
+        .about-content h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 35px;
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .about-feature-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--light-bg);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: var(--transition-normal);
+        }
+
+        .about-feature:hover .about-feature-icon {
+            background: var(--accent-color);
+        }
+
+        .about-feature-icon i {
+            font-size: 22px;
+            color: var(--accent-color);
+            transition: var(--transition-normal);
+        }
+
+        .about-feature:hover .about-feature-icon i {
+            color: var(--white);
+        }
+
+        .about-feature h4 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .about-feature p {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        /* =========================================
+           SERVICES SECTION
+           ========================================= */
+        .services-section {
+            background-color: var(--light-bg);
+            position: relative;
+        }
+
+        .services-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('assets/images/shape-1.png') no-repeat;
+            background-position: 0 0;
+            opacity: 0.03;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 50px 35px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition-normal);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--light-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            border-radius: 20px;
+            position: relative;
+            transition: var(--transition-normal);
+        }
+
+        .service-card:hover .service-icon {
+            background: var(--primary-color);
+        }
+
+        .service-icon i {
+            font-size: 36px;
+            color: var(--accent-color);
+            transition: var(--transition-normal);
+        }
+
+        .service-card:hover .service-icon i {
+            color: var(--white);
+            animation: iconBounce 0.5s ease;
+        }
+
+        @keyframes iconBounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .service-card h3 {
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
+
+        .service-card > p {
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+
+        .service-card ul {
+            margin-bottom: 25px;
+        }
+
+        .service-card ul li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: var(--text-light);
+            font-size: 14px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .service-card ul li:last-child {
+            border-bottom: none;
+        }
+
+        .service-card ul li::before {
+            content: '\f00c';
+            font-family: 'LineIcons';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .service-highlight {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 30px;
+            margin-top: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-highlight::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: shimmer 3s ease infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .service-highlight h4 {
+            color: var(--accent-color);
+            font-size: 18px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .service-highlight p {
+            color: rgba(255,255,255,0.9);
+            font-size: 14px;
+            position: relative;
+        }
+
+        /* =========================================
+           PROCESS/TIMELINE SECTION
+           ========================================= */
+        .process-section {
+            background: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 40px 30px;
+            position: relative;
+        }
+
+        .process-number {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            position: relative;
+            box-shadow: var(--shadow-md);
+        }
+
+        .process-number::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 2px dashed var(--accent-color);
+            border-radius: 50%;
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .process-number span {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .process-icon {
+            position: absolute;
+            top: 50%;
+            right: -20px;
+            transform: translateY(-50%);
+            color: var(--accent-color);
+            font-size: 24px;
+            opacity: 0.5;
+        }
+
+        .process-step:last-child .process-icon {
+            display: none;
+        }
+
+        .process-step h4 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .process-step p {
+            font-size: 15px;
+            max-width: 250px;
+            margin: 0 auto;
+        }
+
+        /* =========================================
+           PRICING SECTION
+           ========================================= */
+        .pricing-section {
+            background: var(--light-bg);
+            position: relative;
+        }
+
+        .pricing-card {
+            background: var(--white);
+            padding: 50px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition-normal);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .pricing-card.featured {
+            background: var(--gradient-primary);
+            transform: scale(1.05);
+            z-index: 1;
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        .pricing-card.featured * {
+            color: var(--white);
+        }
+
+        .pricing-card.featured .pricing-title,
+        .pricing-card.featured .pricing-price {
+            color: var(--white);
+        }
+
+        .pricing-card.featured .pricing-feature li {
+            border-bottom-color: rgba(255,255,255,0.1);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 8px 40px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transform: rotate(45deg);
+        }
+
+        .pricing-icon {
+            width: 90px;
+            height: 90px;
+            background: var(--light-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            transition: var(--transition-normal);
+        }
+
+        .pricing-card.featured .pricing-icon {
+            background: rgba(255,255,255,0.15);
+        }
+
+        .pricing-card:hover .pricing-icon {
+            background: var(--accent-color);
+        }
+
+        .pricing-card:hover .pricing-icon i {
+            color: var(--white);
+        }
+
+        .pricing-icon i {
+            font-size: 36px;
+            color: var(--accent-color);
+            transition: var(--transition-normal);
+        }
+
+        .pricing-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .pricing-subtitle {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .pricing-price {
+            margin-bottom: 30px;
+        }
+
+        .pricing-amount {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+
+        .pricing-amount span {
+            font-size: 18px;
+            color: var(--text-light);
+        }
+
+        .pricing-period {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .pricing-features {
+            text-align: left;
+            margin-bottom: 35px;
+        }
+
+        .pricing-features li {
+            padding: 12px 0;
+            padding-left: 25px;
+            position: relative;
+            color: var(--text-light);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .pricing-features li::before {
+            content: '\f00c';
+            font-family: 'LineIcons';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        /* =========================================
+           WHY CHOOSE US SECTION
+           ========================================= */
+        .why-section {
+            background: var(--white);
+        }
+
+        .feature-box {
+            text-align: center;
+            padding: 50px 30px;
+            background: var(--light-bg);
+            transition: var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            transform: translateY(100%);
+            transition: var(--transition-normal);
+            z-index: 0;
+        }
+
+        .feature-box:hover::before {
+            transform: translateY(0);
+        }
+
+        .feature-box:hover * {
+            color: var(--white);
+        }
+
+        .feature-number {
+            width: 70px;
+            height: 70px;
+            background: var(--accent-color);
+            color: var(--white);
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            position: relative;
+            z-index: 1;
+            transition: var(--transition-normal);
+        }
+
+        .feature-box h4 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+            transition: var(--transition-normal);
+        }
+
+        .feature-box p {
+            font-size: 15px;
+            position: relative;
+            z-index: 1;
+            transition: var(--transition-normal);
+        }
+
+        /* =========================================
+           GALLERY SECTION
+           ========================================= */
+        .gallery-section {
+            background-color: var(--light-bg);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            height: 300px;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: var(--transition-normal);
+        }
+
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,33,71,0.7);
+            opacity: 0;
+            transition: var(--transition-normal);
+        }
+
+        .gallery-item:hover::before {
+            opacity: 1;
+        }
+
+        .gallery-item .placeholder-text {
+            color: var(--accent-color);
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            letter-spacing: 3px;
+            transition: var(--transition-normal);
+        }
+
+        .gallery-item:hover .placeholder-text {
+            transform: scale(1.1);
+        }
+
+        .gallery-item-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition-normal);
+        }
+
+        .gallery-item:hover .gallery-item-overlay {
+            opacity: 1;
+        }
+
+        .gallery-item-overlay a {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 24px;
+            transform: scale(0);
+            transition: var(--transition-normal);
+        }
+
+        .gallery-item:hover .gallery-item-overlay a {
+            transform: scale(1);
+        }
+
+        .gallery-item:nth-child(1) { grid-row: span 2; height: 620px; }
+        .gallery-item:nth-child(4) { grid-column: span 2; }
+
+        /* =========================================
+           TESTIMONIALS SECTION
+           ========================================= */
+        .testimonials-section {
+            background: var(--gradient-primary);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonials-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('assets/images/shape-2.png') no-repeat;
+            background-position: 100% 100%;
+            opacity: 0.05;
+        }
+
+        .testimonials-section h2 {
+            color: var(--white);
+        }
+
+        .testimonial-card {
+            background: rgba(255,255,255,0.1);
+            padding: 50px;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--accent-color);
+            backdrop-filter: blur(10px);
+            transition: var(--transition-normal);
+        }
+
+        .testimonial-card:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateX(10px);
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            font-size: 18px;
+            margin-bottom: 25px;
+            opacity: 0.95;
+            line-height: 1.8;
+            color: var(--white);
+        }
+
+        .testimonial-author-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: var(--white);
+        }
+
+        .testimonial-author-details h5 {
+            color: var(--accent-color);
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .testimonial-author-details p {
+            font-size: 14px;
+            opacity: 0.7;
+            font-style: normal;
+            margin: 0;
+        }
+
+        /* =========================================
+           FAQ SECTION
+           ========================================= */
+        .faq-section {
+            background: var(--white);
+        }
+
+        .faq-item {
+            background: var(--light-bg);
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: var(--transition-normal);
+        }
+
+        .faq-item:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: var(--transition-normal);
+        }
+
+        .faq-question:hover {
+            background: rgba(212,175,55,0.1);
+        }
+
+        .faq-question h4 {
+            font-size: 18px;
+            margin: 0;
+            transition: var(--transition-normal);
+        }
+
+        .faq-item.active .faq-question h4 {
+            color: var(--accent-color);
+        }
+
+        .faq-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-normal);
+        }
+
+        .faq-item.active .faq-icon {
+            background: var(--accent-color);
+            transform: rotate(180deg);
+        }
+
+        .faq-icon i {
+            color: var(--primary-color);
+            transition: var(--transition-normal);
+        }
+
+        .faq-item.active .faq-icon i {
+            color: var(--white);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .faq-answer-content {
+            padding: 0 30px 25px;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+        }
+
+        /* =========================================
+           TEAM SECTION
+           ========================================= */
+        .team-section {
+            background: var(--light-bg);
+        }
+
+        .team-card {
+            text-align: center;
+            background: var(--white);
+            padding: 40px 30px;
+            transition: var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-accent);
+            transform: scaleX(0);
+            transition: var(--transition-normal);
+        }
+
+        .team-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .team-image {
+            width: 150px;
+            height: 150px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-image .placeholder {
+            color: var(--accent-color);
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+        }
+
+        .team-image::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212,175,55,0.2) 0%, transparent 70%);
+            opacity: 0;
+            transition: var(--transition-normal);
+        }
+
+        .team-card:hover .team-image::after {
+            opacity: 1;
+        }
+
+        .team-card h4 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .team-role {
+            color: var(--accent-color);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .team-description {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .team-social a {
+            width: 40px;
+            height: 40px;
+            background: var(--light-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            transition: var(--transition-normal);
+        }
+
+        .team-social a:hover {
+            background: var(--accent-color);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* =========================================
+           MAP SECTION
+           ========================================= */
+        .map-section {
+            background: var(--white);
+            padding: 0;
+        }
+
+        .map-container {
+            height: 450px;
+            background: var(--light-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            opacity: 0.95;
+        }
+
+        .map-info {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .map-info i {
+            font-size: 60px;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .map-info h3 {
+            color: var(--white);
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .map-info p {
+            color: rgba(255,255,255,0.8);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* =========================================
+           CTA SECTION
+           ========================================= */
+        .cta-section {
+            background: var(--light-bg);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('assets/images/section_shape.png') center/cover no-repeat;
+            opacity: 0.05;
+        }
+
+        .cta-section h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* =========================================
+           NEWSLETTER SECTION
+           ========================================= */
+        .newsletter-section {
+            background: var(--gradient-primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .newsletter-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(212,175,55,0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .newsletter-content {
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            z-index: 1;
+        }
+
+        .newsletter-content h2 {
+            color: var(--white);
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .newsletter-content p {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 35px;
+        }
+
+        .newsletter-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            gap: 15px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 18px 25px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .newsletter-form input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(212,175,55,0.3);
+        }
+
+        .newsletter-form button {
+            padding: 18px 45px;
+            border-radius: 50px;
+            white-space: nowrap;
+        }
+
+        /* =========================================
+           CONTACT SECTION
+           ========================================= */
+        .contact-section {
+            background: var(--white);
+        }
+
+        .contact-info-card {
+            padding: 40px;
+            background: var(--light-bg);
+            height: 100%;
+            transition: var(--transition-normal);
+        }
+
+        .contact-info-card:hover {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-info-card h3 {
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            gap: 20px;
+        }
+
+        .contact-item-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: var(--transition-normal);
+        }
+
+        .contact-item:hover .contact-item-icon {
+            background: var(--accent-color);
+        }
+
+        .contact-item-icon i {
+            font-size: 24px;
+            color: var(--accent-color);
+            transition: var(--transition-normal);
+        }
+
+        .contact-item:hover .contact-item-icon i {
+            color: var(--white);
+        }
+
+        .contact-item h4 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .contact-item p {
+            margin: 0;
+            color: var(--text-light);
+            font-size: 15px;
+        }
+
+        .contact-form {
+            padding: 50px;
+            background: var(--white);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea {
+            width: 100%;
+            padding: 18px 25px;
+            margin-bottom: 25px;
+            border: 2px solid var(--light-bg);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            transition: var(--transition-normal);
+            background: var(--light-bg);
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .contact-form input:focus,
+        .contact-form select:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            background: var(--white);
+        }
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+        .footer-area {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 80px 0 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-area::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('assets/images/shape-1.png') no-repeat;
+            background-position: 0 100%;
+            opacity: 0.03;
+        }
+
+        .footer-logo {
+            margin-bottom: 30px;
+        }
+
+        .footer-logo h2 {
+            color: var(--white);
+            font-size: 40px;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo p {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .footer-title {
+            font-size: 20px;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+            font-family: 'Playfair Display', serif;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--accent-color);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            transition: var(--transition-normal);
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .footer-links a::before {
+            content: '\f105';
+            font-family: 'LineIcons';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+            padding-left: 25px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .footer-social a {
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            border-radius: 50%;
+            transition: var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-social a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--accent-color);
+            transform: scale(0);
+            transition: var(--transition-normal);
+            z-index: 0;
+        }
+
+        .footer-social a:hover::before {
+            transform: scale(1);
+        }
+
+        .footer-social a i {
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-social a:hover {
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 60px;
+            padding-top: 30px;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+        }
+
+        /* =========================================
+           WHATSAPP FLOAT BUTTON
+           ========================================= */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 5px 25px rgba(37,211,102,0.4);
+            z-index: 9999;
+            transition: var(--transition-normal);
+            animation: pulseWhatsapp 2s ease infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 35px rgba(37,211,102,0.5);
+        }
+
+        @keyframes pulseWhatsapp {
+            0%, 100% { box-shadow: 0 5px 25px rgba(37,211,102,0.4); }
+            50% { box-shadow: 0 5px 35px rgba(37,211,102,0.6); }
+        }
+
+        /* =========================================
+           BACK TO TOP
+           ========================================= */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--accent-color);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-normal);
+            z-index: 9999;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        /* =========================================
+           RESPONSIVE
+           ========================================= */
+        @media (max-width: 1199px) {
+            .hero-content h1 { font-size: 64px; }
+            .section-title h2 { font-size: 40px; }
+            .about-section::before { display: none; }
+            .about-content { padding-left: 0; margin-top: 40px; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .gallery-item:nth-child(1) { grid-row: span 1; height: 300px; }
+            .gallery-item:nth-child(4) { grid-column: span 1; }
+        }
+
+        @media (max-width: 991px) {
+            .hero-content h1 { font-size: 48px; }
+            .hero-content h1 span { font-size: 18px; letter-spacing: 4px; }
+            .section-title h2 { font-size: 32px; }
+            .section-padding { padding: 80px 0; }
+            .stat-number { font-size: 42px; }
+            .pricing-card.featured { transform: scale(1); }
+            .newsletter-form { flex-direction: column; }
+            .contact-form { padding: 30px; }
+            .navbar-collapse {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--primary-color);
+                padding: 20px;
+                box-shadow: var(--shadow-lg);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hero-content h1 { font-size: 36px; }
+            .hero-content .tagline { font-size: 18px; }
+            .hero-content .description { font-size: 16px; }
+            .hero-buttons { flex-direction: column; gap: 15px; }
+            .hero-buttons .btn { width: 100%; }
+            .section-title h2 { font-size: 28px; }
+            .section-title { margin-bottom: 40px; }
+            .about-features { grid-template-columns: 1fr; }
+            .process-step { margin-bottom: 40px; }
+            .process-icon { display: none; }
+            .pricing-card { margin-bottom: 30px; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .testimonial-card { padding: 30px; }
+            .faq-question { padding: 20px; }
+            .faq-question h4 { font-size: 16px; }
+            .cta-section h2 { font-size: 32px; }
+            .newsletter-content h2 { font-size: 28px; }
+            .footer-area { padding: 60px 0 30px; }
+            .whatsapp-float { width: 55px; height: 55px; font-size: 28px; }
+        }
+
+        /* =========================================
+           ANIMATION CLASSES FOR SCROLL
+           ========================================= */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        .delay-4 { transition-delay: 0.4s; }
+        .delay-5 { transition-delay: 0.5s; }
+
+        /* =========================================
+           VIDEO SECTION
+           ========================================= */
+        .video-section {
+            background: var(--gradient-primary);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('assets/images colisée/vue ensemble salle.jpeg') center/cover no-repeat;
+            opacity: 0.15;
+        }
+
+        .video-section h2 {
+            color: var(--white);
+        }
+
+        .video-section p {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .video-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            display: block;
+        }
+
+        .video-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.3);
+            z-index: 1;
+            opacity: 0;
+            transition: var(--transition-normal);
+        }
+
+        .video-wrapper:hover::before {
+            opacity: 1;
+        }
+
+        .video-play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 2;
+            transition: var(--transition-normal);
+        }
+
+        .video-play-btn::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: var(--accent-color);
+            animation: pulseVideo 2s ease infinite;
+            z-index: -1;
+        }
+
+        @keyframes pulseVideo {
+            0% { transform: scale(1); opacity: 0.7; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        .video-play-btn i {
+            color: var(--white);
+            font-size: 32px;
+            margin-left: 5px;
+        }
+
+        .video-wrapper:hover .video-play-btn {
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        /* =========================================
+           GALLERY IMAGES
+           ========================================= */
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-item {
+            background: none;
+        }
+
+        .gallery-item .placeholder-text {
+            display: none;
+        }
+
+        /* =========================================
+           ABOUT IMAGES
+           ========================================= */
+        .about-image-main {
+            background: none !important;
+        }
+
+        .about-image-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* =========================================
+           SERVICE IMAGES
+           ========================================= */
+        .service-image {
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 25px;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-normal);
+        }
+
+        .service-card:hover .service-image img {
+            transform: scale(1.1);
+        }
+
+        /* =========================================
+           HERO VIDEO BACKGROUND
+           ========================================= */
+        .hero-video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,33,71,0.7);
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <!--====== PRELOADER PART START ======-->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-ring"></div>
+            <div class="preloader-ring"></div>
+            <div class="preloader-logo">C</div>
+        </div>
+    </div>
+    <!--====== PRELOADER PART ENDS ======-->
+
+    <!--====== HEADER PART START ======-->
+    <header class="header_area">
+        <div class="header_navbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="index.html">
+                                <img src="assets/images colisée/logo.jpeg" alt="Le Colisée" style="height: 50px;">
+                            </a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul id="nav" class="navbar-nav ml-auto">
+                                    <li class="nav-item">
+                                        <a class="nav-link page-scroll" href="#home">Accueil</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link page-scroll" href="#about">A Propos</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link page-scroll" href="#services">Services</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link page-scroll" href="#gallery">Galerie</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link page-scroll" href="#contact">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--====== HERO SECTION ======-->
+        <div id="home" class="hero-section">
+            <video class="hero-video-bg" autoplay muted loop playsinline>
+                <source src="assets/images colisée/videos/video 1.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+            <div class="hero-shapes">
+                <div class="hero-shape hero-shape-1"></div>
+                <div class="hero-shape hero-shape-2"></div>
+                <div class="hero-shape hero-shape-3"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-badge">Salle Polyvalente d'Excellence</div>
+                <h1>
+                    <span>L'Art de Recevoir</span>
+                    Le Colisée
+                </h1>
+                <p class="tagline">L'Excellence pour Héritage</p>
+                <p class="description">Au cœur de Lubumbashi, Le Colisée redéfinit les standards du raffinement et de l'organisation événementielle. Chaque détail y est pensé avec précision. Chaque instant y est sublimé.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-gold">Réserver ma date</a>
+                    <a href="#services" class="btn btn-outline">Découvrir nos espaces</a>
+                </div>
+            </div>
+            <div class="hero-scroll">
+                <a href="#about" class="page-scroll">
+                    <div class="scroll-icon"></div>
+                    Défiler
+                </a>
+            </div>
+        </div>
+    </header>
+    <!--====== HEADER PART ENDS ======-->
+
+    <!--====== STATS SECTION ======-->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item reveal">
+                        <div class="stat-icon">
+                            <i class="lni lni-heart"></i>
+                        </div>
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Événements Réussis</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item reveal delay-1">
+                        <div class="stat-icon">
+                            <i class="lni lni-users"></i>
+                        </div>
+                        <div class="stat-number">50K+</div>
+                        <div class="stat-label">Invités Satisfaits</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item reveal delay-2">
+                        <div class="stat-icon">
+                            <i class="lni lni-calendar"></i>
+                        </div>
+                        <div class="stat-number">8+</div>
+                        <div class="stat-label">Années d'Excellence</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item reveal delay-3">
+                        <div class="stat-icon">
+                            <i class="lni lni-star"></i>
+                        </div>
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Satisfaction Client</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====== STATS SECTION ENDS ======-->
+
+    <!--====== ABOUT SECTION ======-->
+    <section id="about" class="about-section section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-image-wrapper reveal-left">
+                        <div class="about-image-main">
+                            <img src="assets/images colisée/vue ensemble salle.jpeg" alt="Vue d'ensemble du Colisée">
+                        </div>
+                        <div class="about-image-float">
+                            <img src="assets/images colisée/interieur salle 1.jpeg" alt="Intérieur salle">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-content">
+                        <div class="section-title text-left reveal">
+                            <span class="subtitle">Notre Identité</span>
+                            <h2>L'Excellence au Cœur de Notre ADN</h2>
+                            <div class="accent-line" style="margin: 0;"></div>
+                        </div>
+                        <p class="reveal delay-1">Implanté au cœur de Lubumbashi, Le Colisée est né d'une ambition claire : offrir à la ville un espace événementiel à la hauteur des plus grandes capitales.</p>
+                        <p class="reveal delay-2">Nous avons imaginé un lieu où l'architecture moderne rencontre le prestige, où la technologie épouse l'élégance, et où le service devient un art.</p>
+                        <p class="reveal delay-3"><strong>Notre mission est simple :</strong> Créer un cadre exceptionnel pour des moments exceptionnels.</p>
+                        
+                        <div class="about-features">
+                            <div class="about-feature reveal delay-1">
+                                <div class="about-feature-icon">
+                                    <i class="lni lni-diamond"></i>
+                                </div>
+                                <div>
+                                    <h4>Excellence</h4>
+                                    <p>Des standards élevés, sans compromis.</p>
+                                </div>
+                            </div>
+                            <div class="about-feature reveal delay-2">
+                                <div class="about-feature-icon">
+                                    <i class="lni lni-crown"></i>
+                                </div>
+                                <div>
+                                    <h4>Élégance</h4>
+                                    <p>Une esthétique maîtrisée dans chaque détail.</p>
+                                </div>
+                            </div>
+                            <div class="about-feature reveal delay-3">
+                                <div class="about-feature-icon">
+                                    <i class="lni lni-handshake"></i>
+                                </div>
+                                <div>
+                                    <h4>Engagement</h4>
+                                    <p>Une équipe impliquée avant, pendant et après.</p>
+                                </div>
+                            </div>
+                            <div class="about-feature reveal delay-4">
+                                <div class="about-feature-icon">
+                                    <i class="lni lni-heart"></i>
+                                </div>
+                                <div>
+                                    <h4>Satisfaction Totale</h4>
+                                    <p>Votre réussite est notre priorité absolue.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====== ABOUT SECTION ENDS ======-->
+
+    <!--====== SERVICES SECTION ======-->
+    <section id="services" class="services-section section-padding">
+        <div class="container">
+            <div class="section-title reveal">
+                <span class="subtitle">Nos Services</span>
+                <h2>Des Solutions Complètes</h2>
+                <div class="accent-line"></div>
+                <p style="margin-top: 20px; font-size: 18px;">Un Événement Clé en Main, Tout Est Inclus</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="service-card reveal">
+                        <div class="service-icon">
+                            <i class="lni lni-heart"></i>
+                        </div>
+                        <h3>Célébrations & Mariages</h3>
+                        <p>Location de Salle de Fête - Un espace somptueux, climatisé et modulable pouvant accueillir de 100 à 1000 invités.</p>
+                        <ul>
+                            <li>Hauteur sous plafond élégante</li>
+                            <li>Éclairage professionnel</li>
+                            <li>Acoustique optimisée</li>
+                            <li>Idéal pour mariages, anniversaires, galas</li>
+                        </ul>
+                        <div class="service-highlight">
+                            <h4>Exclusivité : Suite Nuptielle Offerte</h4>
+                            <p>Parce qu'un mariage mérite un cadre digne de son importance</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="service-card reveal delay-1">
+                        <div class="service-icon">
+                            <i class="lni lni-briefcase"></i>
+                        </div>
+                        <h3>Business & Conférences</h3>
+                        <p>Salle de Conférence Professionnelle - Un cadre pensé pour la performance et la concentration.</p>
+                        <ul>
+                            <li>Disposition modulable (théâtre, U, classe)</li>
+                            <li>Équipement audiovisuel</li>
+                            <li>Sonorisation de qualité</li>
+                            <li>Connexion professionnelle</li>
+                            <li>Climatisation optimale</li>
+                        </ul>
+                        <p style="margin-top: 20px; font-style: italic;">Le Colisée devient votre partenaire d'image et de crédibilité.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="service-card reveal">
+                        <div class="service-icon">
+                            <i class="lni lni-star"></i>
+                        </div>
+                        <h3>Logistique & Accompagnement Premium</h3>
+                        <div class="row mt-4">
+                            <div class="col-md-4">
+                                <h4><i class="lni lni-restaurant accent-color"></i> Service Traiteur</h4>
+                                <p>Une gastronomie raffinée, adaptée à vos préférences culturelles et culinaires.</p>
+                            </div>
+                            <div class="col-md-4">
+                                <h4><i class="lni lni-star accent-color"></i> Service Protocole</h4>
+                                <p>Accueil structuré, gestion des placements, coordination générale.</p>
+                            </div>
+                            <div class="col-md-4">
+                                <h4><i class="lni lni-layout accent-color"></i> Matériels & Décoration</h4>
+                                <p>Chaises élégantes, tables habillées, éclairage d'ambiance, mise en scène sur mesure.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====== SERVICES SECTION ENDS ======-->
+
+    <!--====== PROCESS SECTION ======-->
+    <section class="process-section section-padding">
+        <div class="container">
+            <div class="section-title reveal">
+                <span class="subtitle">Comment Ça Marche</span>
+                <h2>Notre Processus</h2>
+                <div class="accent-line"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-step reveal">
+                        <div class="process-number">
+                            <span>1</span>
+                        </div>
+                        <i class="lni lni-arrow-right process-icon"></i>
+                        <h4>Contactez-Nous</h4>
+                        <p>Appelez-nous ou envoyez un message pour discuter de votre projet événementiel.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-step reveal delay-1">
+                        <div class="process-number">
+                            <span>2</span>
+                        </div>
+                        <i class="lni lni-arrow-right process-icon"></i>
+                        <h4>Visite & Conseil</h4>
+                        <p>Découvrez nos espaces et laissez-vous guider par nos experts.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-step reveal delay-2">
+                        <div class="process-number">
+                            <span>3</span>
+                        </div>
+                        <i class="lni lni-arrow-right process-icon"></i>
+                        <h4>Personnalisation</h4>
+                        <p>Nous adaptons chaque détail selon vos envies et votre budget.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-step reveal delay-3">
+                        <div class="process-number">
+                            <span>4</span>
+                        </div>
+                        <h4>Votre Événement</h4>
+                        <p>Profitez d'une organisation impeccable pour un moment inoubliable.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====== PROCESS SECTION ENDS ======-->
+
+    <!--====== PRICING SECTION ======-->
+    <section class="pricing-section section-padding">
+        <div class="container">
+            <div class="section-title reveal">
+                <span class="subtitle">Nos Tarifs</span>
+                <h2>Packages & Prestations</h2>
+                <div class="accent-line"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="pricing-card reveal">
+                        <div class="pricing-icon">
+                            <i class="lni lni-gift"></i>
+                        </div>
+                        <h3 class="pricing-title">Essentiel</h3>
+                        <p class="pricing-subtitle">Pour les petits événements</p>
+                        <div class="pricing-price">
+                            <div class="pricing-amount">Sur devis</div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>Salle de 100 à 300 personnes</li>
+                            <li>Location de salle</li>
+                            <li>Éclairage de base</li>
+                            <li>Sonorisation standard</li>
+                            <li>Climatisation</li>
+                            <li>Stationnement</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline">Demander un devis</a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="pricing-card featured reveal delay-1">
+                        <div class="pricing-badge">Populaire</div>
+                        <div class="pricing-icon">
+                            <i class="lni lni-crown"></i>
+                        </div>
+                        <h3 class="pricing-title">Premium</h3>
+                        <p class="pricing-subtitle">Pour les événements complets</p>
+                        <div class="pricing-price">
+                            <div class="pricing-amount">Sur devis</div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>Salle de 300 à 600 personnes</li>
+                            <li>Pack mariage complet</li>
+                            <li>Éclairage professionnel</li>
+                            <li>Sonorisation premium</li>
+                            <li>Service traiteur</li>
+                            <li>Suite nuptielle incluse</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-gold">Demander un devis</a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="pricing-card reveal delay-2">
+                        <div class="pricing-icon">
+                            <i class="lni lni-diamond"></i>
+                        </div>
+                        <h3 class="pricing-title">Exclusif</h3>
+                        <p class="pricing-subtitle">Pour les grands événements</p>
+                        <div class="pricing-price">
+                            <div class="pricing-amount">Sur devis</div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>Salle de 600 à 1000 personnes</li>
+                            <li>Événement clé en main</li>
+                            <li>Éclairage spectacle</li>
+                            <li>Sonorisation événementielle</li>
+                            <li>Traiteur premium</li>
+                            <li>Suite nuptielle VIP</li>
+                            <li>Équipe complète</li>
+                            <li>Sécurité incluse</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline">Demander un devis</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====== PRICING SECTION ENDS ======-->
+
+    <!--====== WHY CHOOSE US SECTION ======-->
+    <section class="why-section section-padding">
+        <div class="container">
+            <div class="section-title reveal">
+                <span class="subtitle">Pourquoi Nous Choisir</span>
+                <h2>L'Avantage Colisée</h2>
+                <div class="accent-line"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-box reveal">
+                        <div class="feature-number">1</div>
+                        <h4>Flexibilité Totale</h4>
+                        <p>Que vous soyez 100 ou 1000 invités, nous adaptons l'espace selon votre vision et votre budget.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-box reveal delay-1">
+                        <div class="feature-number">2</div>
+                        <h4>Infrastructure Premium</h4>
+                        <p>Mobilier de prestige, finitions élégantes, éclairage professionnel, sécurité assurée.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-box reveal delay-2">
+                        <div class="feature-number">3</div>
+                        <h4>Hébergement Inclus</h4>
+                        <p>Un appartement de haut standing offert pour les mariés. Un avantage rare à Lubumbashi.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-box reveal delay-3">
+                        <div class="feature-number">4</div>
+                        <h4>Accompagnement Personnalisé</h4>
+                        <p>Un interlocuteur dédié pour suivre votre projet du premier contact jusqu'au jour J.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-box reveal delay-4">
+                        <div class="feature-number">5</div>
+                        <h4>Image & Prestige</h4>
+                        <p>Organiser votre événement au Colisée valorise votre marque, votre famille ou votre entreprise.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-box reveal delay-5">
+                        <div class="feature-number">6</div>
+                        <h4>Service Complet</h4>
+                        <p>De la planification à l'exécution, nous gérons chaque détail pour un résultat parfait.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====== WHY CHOOSE US SECTION ENDS ======-->
+
+    <!--====== GALLERY SECTION ======-->
+    <section id="gallery" class="gallery-section section-padding">
+        <div class="container">
+            <div class="section-title reveal">
+                <span class="subtitle">Notre Galerie</span>
+                <h2>Nos Réalisations</h2>
+                <div class="accent-line"></div>
+                <p style="margin-top: 20px; font-size: 18px;">Découvrez quelques-uns de nos événements</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item reveal">
+                    <img src="assets/images colisée/1.jpeg" alt="Mariage">
+                    <div class="gallery-item-overlay">
+                        <a href="#"><i class="lni lni-zoom-in"></i></a>
+                    </div>
+                </div>
+                <div class="gallery-item reveal delay-1">
+                    <img src="assets/images colisée/2.jpeg" alt="Gala">
+                    <div class="gallery-item-overlay">
+                        <a href="#"><i class="lni lni-zoom-in"></i></a>
+                    </div>
+                </div>
+                <div class="gallery-item reveal delay-2">
+                    <img src="assets/images colisée/3.jpeg" alt="Conférence">
+                    <div class="gallery-item-overlay">
+                        <a href="#"><i class="lni lni-zoom-in"></i></a>
+                    </div>
+                </div>
+                <div class="gallery-item reveal delay-3">
+                    <img src="assets/images colisée/4.jpeg" alt="Célébration">
+                    <div class="gallery-item-overlay">
+                        <a href="#"><i class="lni lni-zoom-in"></i></a>
+                    </div>
+                </div>
+                <div class="gallery-item reveal delay-4">
+                    <img src="assets/images colisée/5.jpeg" alt="Event">
+                    <div class="gallery-item-overlay">
+                        <a href="#"><i class="lni lni-zoom-in"></i></a>
+                    </div>
+                </div>
+                <div class="gallery-item reveal delay-5">
+                    <img src="assets/images colisée/table mariés.jpeg" alt="Soirée">
+                    <div class="gallery-item-overlay">
+                        <a href="#"><i class="lni lni-zoom-in"></i></a>
+                    </div>
+                </div>
+                <div class="gallery-item reveal delay-5">
+                    <img src="assets/images colisée/6.jpeg" alt="Décoration">
+                    <div class="gallery-item-overlay">
+                        <a href="#"><i class="lni lni-zoom-in"></i></a>
+                    </div>
+                </div>
+                <div class="gallery-item reveal delay-5">
+                    <img src="assets/images colisée/table+deco.jpeg" alt="Table décorée">
+                    <div class="gallery-item-overlay">
+                        <a href="#"><i class="lni lni-zoom-in"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;" class="reveal">
+                <a href="#contact" class="btn btn-gold">Voir la Galerie Complète</a>
+            </div>
+        </div>
+    </section>
+    <!--====== GALLERY SECTION ENDS ======-->
+
+    <!--====== TESTIMONIALS SECTION ======-->
+    <section class="testimonials-section section-padding">
+        <div class="container">
+            <div class="section-title reveal">
+                <span class="subtitle">Témoignages</span>
+                <h2>Ils Nous Ont Fais Confiance</h2>
+                <div class="accent-line"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="testimonial-card reveal">
+                        <p>"Une organisation impeccable et une salle d'une élégance rare à Lubumbashi. Nous avons été conquis par le professionnalisme de l'équipe."</p>
+                        <div class="testimonial-author-info">
+                            <div class="testimonial-avatar">M</div>
+                            <div class="testimonial-author-details">
+                                <h5>M. Kambala</h5>
+                                <p>Client Mariage</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial-card reveal delay-1">
+                        <p>"Notre conférence a gagné en crédibilité grâce au cadre professionnel du Colisée. Un partenaire idéal pour nos événements d'entreprise."</p>
+                        <div class="testimonial-author-info">
+                            <div class="testimonial-avatar">D</div>
+                            <div class="testimonial-author-details">
+                                <h5>Dr. M. TSHIBAKA</h5>
+                                <p>Directeur Général</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial-card reveal delay-2">
+                        <p>"Service attentif, équipe disponible, résultat au-delà de nos attentes. Je recommande fortement Le Colisée pour tous types d'événements."</p>
+                        <div class="testimonial-author-info">
+                            <div class="testimonial-avatar">S</div>
+                            <div class="testimonial-author-details">
+                                <h5>Mme S. KASONGO</h5>
+                                <p>Organisatrice d'événements</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====== TESTIMONIALS SECTION ENDS ======-->
+
+    <!--====== FAQ SECTION ======-->
+    <section class="faq-section section-padding">
+        <div class="container">
+            <div class="section-title reveal">
+                <span class="subtitle">Questions Fréquentes</span>
+                <h2>FAQ</h2>
+                <div class="accent-line"></div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="faq-item reveal">
+                        <div class="faq-question">
+                            <h4>Quelle est la capacité maximale du Colisée ?</h4>
+                            <div class="faq-icon">
+                                <i class="lni lni-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Le Colisée peut accueillir jusqu'à 1000 invités selon la disposition choisie. Nos espaces sont modulables pour s'adapter à tous types d'événements, des réunions intimes aux grands galas.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal delay-1">
+                        <div class="faq-question">
+                            <h4>La suite nuptielle est-elle vraiment offerte ?</h4>
+                            <div class="faq-icon">
+                                <i class="lni lni-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Oui, pour tout événement de mariage, nous OFFRONS une Suite nuptielle de haut standing pour les mariés. C'est notre exclusivité pour rendre votre journée encore plus inoubliable.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal delay-2">
+                        <div class="faq-question">
+                            <h4>Quels services sont inclus dans le prix de location ?</h4>
+                            <div class="faq-icon">
+                                <i class="lni lni-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Nos packages incluent la location de la salle, l'éclairage, la sonorisation, la climatisation, le stationnement et un accompagnement personnalisé. Des services additionnels comme le traiteur et la décoration sont disponibles.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal delay-3">
+                        <div class="faq-question">
+                            <h4>Comment réserve-t-on une date ?</h4>
+                            <div class="faq-icon">
+                                <i class="lni lni-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Contactez-nous par téléphone ou via le formulaire de contact. Nous organiserons une visite personnalisée pour discuter de votre projet et établir un devis détaillé.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====== FAQ SECTION ENDS ======-->
+
+    <!--====== MAP SECTION ======-->
+    <section class="map-section">
+        <div class="map-container">
+            <div class="map-info">
+                <i class="lni lni-map-marker"></i>
+                <h3>Venez Nous Rendre Visite</h3>
+                <p>1, Avenue Mausa, Boulevard Moïse<br>En face de Kin Marché, Plateau Karavia<br>Lubumbashi, RDC</p>
+            </div>
+        </div>
+    </section>
+    <!--====== MAP SECTION ENDS ======-->
+
+    <!--====== CTA SECTION ======-->
+    <section class="cta-section section-padding">
+        <div class="container">
+            <h2 class="reveal">Prêt à Donner Vie à Votre Événement ?</h2>
+            <p class="reveal delay-1">Nos équipes sont disponibles pour étudier votre projet et vous proposer une solution personnalisée.</p>
+            <div class="hero-buttons reveal delay-2" style="justify-content: center; display: flex;">
+                <a href="#contact" class="btn btn-gold">Demander un devis personnalisé</a>
+                <a href="https://wa.me/243843873333" class="btn btn-outline" target="_blank">Nous contacter sur WhatsApp</a>
+            </div>
+        </div>
+    </section>
+    <!--====== CTA SECTION ENDS ======-->
+
+    <!--====== NEWSLETTER SECTION ======-->
+    <section class="newsletter-section section-padding">
+        <div class="container">
+            <div class="newsletter-content reveal">
+                <h2>Restez Informé</h2>
+                <p>Inscrivez-vous à notre newsletter pour recevoir nos dernières nouvelles et offres spéciales.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Votre adresse email">
+                    <button type="submit" class="btn btn-gold">S'inscrire</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!--====== NEWSLETTER SECTION ENDS ======-->
+
+    <!--====== CONTACT SECTION ======-->
+    <section id="contact" class="contact-section section-padding">
+        <div class="container">
+            <div class="section-title reveal">
+                <span class="subtitle">Contactez-Nous</span>
+                <h2>Une Question ? Parlons-en</h2>
+                <div class="accent-line"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="contact-info-card reveal">
+                        <h3>Nos Coordonnées</h3>
+                        
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="lni lni-map-marker"></i>
+                            </div>
+                            <div>
+                                <h4>Adresse</h4>
+                                <p>1, Avenue Mausa, Boulevard Moïse<br>En face de Kin Marché, Plateau Karavia<br>Lubumbashi, RDC</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="lni lni-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Téléphone / WhatsApp</h4>
+                                <p>+243 843 873 333<br>+243 971 285 958</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="lni lni-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>contact@lecolisee.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="lni lni-instagram-original"></i>
+                            </div>
+                            <div>
+                                <h4>Instagram</h4>
+                                <p>@le_colisee_salle_polyvalente</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="contact-form reveal delay-1">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="Nom complet *" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="tel" placeholder="Téléphone *" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="email" placeholder="Email">
+                                </div>
+                                <div class="col-md-6">
+                                    <select>
+                                        <option value="">Type d'événement</option>
+                                        <option value="mariage">Mariage</option>
+                                        <option value="conference">Conférence</option>
+                                        <option value="gala">Gala</option>
+                                        <option value="anniversaire">Anniversaire</option>
+                                        <option value="autre">Autre</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <input type="date" placeholder="Date souhaitée">
+                            <input type="number" placeholder="Nombre approximatif d'invités">
+                            <textarea placeholder="Message - Décrivez votre projet..."></textarea>
+                            <button type="submit" class="btn btn-gold" style="width: 100%;">Envoyer ma demande</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====== CONTACT SECTION ENDS ======-->
+
+    <!--====== VIDEO SECTION ======-->
+    <section id="videos" class="video-section section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="section-title text-center">
+                        <h2 class="wow fadeInUp" data-wow-delay="0.2s">Vidéos</h2>
+                        <p class="wow fadeInUp" data-wow-delay="0.4s">Découvrez Le Colisée en mouvement</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-12">
+                    <div class="video-wrapper wow fadeInUp" data-wow-delay="0.3s">
+                        <video controls>
+                            <source src="assets/images colisée/videos/video 1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="video-wrapper wow fadeInUp" data-wow-delay="0.5s">
+                        <video controls>
+                            <source src="assets/images colisée/videos/video 2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--====== FOOTER PART START ======-->
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="footer-logo">
+                        <h2>LE COLISÉE</h2>
+                        <p>Salle Polyvalente<br>Excellence. Satisfaction. Élégance.</p>
+                    </div>
+                    <div class="footer-social">
+                        <a href="#"><i class="lni lni-instagram-original"></i></a>
+                        <a href="#"><i class="lni lni-whatsapp"></i></a>
+                        <a href="#"><i class="lni lni-facebook-original"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h4 class="footer-title">Liens Rapides</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Accueil</a></li>
+                        <li><a href="#services">Nos Services</a></li>
+                        <li><a href="#gallery">Galerie</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#contact">Réserver</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">+243 843 873 333</a></li>
+                        <li><a href="#">+243 971 285 958</a></li>
+                        <li><a href="#">contact@lecolisee.com</a></li>
+                        <li><a href="#">Lubumbashi, RDC</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Le Colisée - Tous droits réservés | Mentions légales | Politique de confidentialité</p>
+            </div>
+        </div>
+    </footer>
+    <!--====== FOOTER PART ENDS ======-->
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/243843873333" class="whatsapp-float" target="_blank">
+        <i class="lni lni-whatsapp"></i>
+    </a>
+
+    <!--====== BACK TOP TOP PART START ======-->
+    <a href="#" class="back-to-top"><i class="lni lni-chevron-up"></i></a>
+    <!--====== BACK TOP TOP PART ENDS ======-->
+
+    <!--====== Jquery js ======-->
+    <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="assets/js/vendor/modernizr-3.7.1.min.js"></script>
+
+    <!--====== Bootstrap js ======-->
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <!--====== Scrolling Nav js ======-->
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/scrolling-nav.js"></script>
+
+    <!--====== wow js ======-->
+    <script src="assets/js/wow.min.js"></script>
+
+    <!--====== Main js ======-->
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        // Preloader
+        $(window).on('load', function() {
+            $('.preloader').fadeOut(1000);
+        });
+
+        // Navbar scroll effect
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 100) {
+                $('.header_navbar').addClass('scrolled');
+            } else {
+                $('.header_navbar').removeClass('scrolled');
+            }
+        });
+
+        // Initialize WOW
+        new WOW({
+            offset: 100,
+            mobile: false,
+            live: false
+        }).init();
+
+        // FAQ Accordion
+        $('.faq-question').click(function() {
+            const faqItem = $(this).parent();
+            const isActive = faqItem.hasClass('active');
+            
+            $('.faq-item').removeClass('active');
+            $('.faq-answer').slideUp(300);
+            
+            if (!isActive) {
+                faqItem.addClass('active');
+                faqItem.find('.faq-answer').slideDown(300);
+            }
+        });
+
+        // Scroll Reveal Animation
+        function reveal() {
+            var reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+            
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+
+        window.addEventListener('scroll', reveal);
+        reveal(); // Initial call
+
+        // Back to Top
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 500) {
+                $('.back-to-top').addClass('show');
+            } else {
+                $('.back-to-top').removeClass('show');
+            }
+        });
+
+        $('.back-to-top').click(function(e) {
+            e.preventDefault();
+            $('html, body').animate({scrollTop: 0}, 1000);
+        });
+
+        // Smooth scroll for anchor links
+        $('a.page-scroll').on('click', function(event) {
+            var $anchor = $(this);
+            $('html, body').stop().animate({
+                scrollTop: $($anchor.attr('href')).offset().top - 70
+            }, 1000, 'easeInOutExpo');
+            event.preventDefault();
+        });
+    </script>
+</body>
+</html>
